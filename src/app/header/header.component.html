@@ -1,0 +1,26 @@
+<header class="flex space-x-10 bg-blue-400 text-white p-5 ">
+
+    <div class="flex-1 flex space-x-10">
+        <img (click)="showSidebar()" src="./../../assets/Images/menu.png" class="ml-5 h-10 w-10 " />
+        <img src="./../../assets/Images/logo.png" class="ml-5 h-10 w-15 cursor-pointer" alt="logo" />
+        <a href="/" class='cursor-pointer text-3xl '>Med-Ease</a>
+    </div>
+    <div class="flex space-x-10 text-lg">
+        <a href="/">Login</a>
+        <a href="/">Signup</a>
+
+    </div>
+
+
+</header>
+<div class="flex">
+    <div *ngIf="showSidenav">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div *ngIf="showSidenav">
+        <app-content class="bg-blue-900"></app-content>
+    </div>
+    <div class="flex-1">
+        <app-content></app-content>
+    </div>
+</div>
