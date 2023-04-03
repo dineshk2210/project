@@ -1,3 +1,19 @@
-<app-header></app-header>
+<app-header (SideOpen)=onSide()></app-header>
+<!-- <div class="flex ">
+    <div class="flex"></div>
+    <div class="flex"></div>
 
+</div> -->
+<!-- <app-login></app-login> -->
+<div class="flex">
+    <div>
+        <app-sidebar [showSideNav]="showSideNav"></app-sidebar>
+    </div>
+    <div class="flex-1">
+        <router-outlet></router-outlet>
+    </div>
+
+
+</div>
 <app-footer></app-footer>
+<!-- <router-outlet></router-outlet> -->

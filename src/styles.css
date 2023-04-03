@@ -2,3 +2,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer component{
+    .primary-container{
+    @apply bg-primary-100 font-mono text-gray-300 
+    }
+    .tabs-sidebar{
+        @apply border-gray-600 border-2  border-t-0 p-5 
+    }
+}

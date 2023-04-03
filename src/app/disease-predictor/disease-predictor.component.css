@@ -1,0 +1,9 @@
+
+@layer components{
+    th{
+        @apply border-2  p-2
+    }
+    td{
+        @apply border-2 p-5
+    }
+}

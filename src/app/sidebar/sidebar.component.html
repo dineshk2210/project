@@ -1,11 +1,11 @@
-<div class="flex">
-    <div class=" w-72 h-screen bg-blue-400 ">
-        <div class="  flex flex-col  text-2xl font-bold text-white">
-            <a class='border-gray-700 border-2 p-5' href="/">Dashboard</a>
-            <a class='border-gray-700 border-2 border-t-0 p-5' href="/"> Disease Predictor</a>
-            <a class='border-gray-700 border-2  border-t-0 p-5' href="/">Precautions</a>
-            <a class='border-gray-700 border-2  border-t-0 p-5' href="/">Blog</a>
-        </div>
-    </div>
-    <app-content class="flex-1"></app-content>
+<div *ngIf="showSideNav"
+        class="  flex flex-col  text-2xl  font-mono text-gray-300  h-screen transition translate-x-full ease-in-out duration-200 bg-primary-50 shadow-2xl shadow-white  ">
+        <a class='border-gray-600 border-2  border-t-0 p-5  hover:border-gray-600 hover:bg-secondary-100
+                hover:text-primary-50 shadow-2xl  ' href="/">Dashboard</a>
+        <a class='border-gray-600 border-2  border-t-0 p-5  hover:border-gray-600 hover:bg-secondary-100
+            hover:text-primary-50 shadow-2xl ' routerLink="disease-predictor"> Disease Predictor</a>
+        <a class='border-gray-600 border-2  border-t-0 p-5  hover:border-gray-600 hover:bg-secondary-100
+            hover:text-primary-50 shadow-2xl ' href="/">Precautions</a>
+        <a class='border-gray-600 border-2  border-t-0 p-5  hover:border-gray-600 hover:bg-secondary-100
+            hover:text-primary-50 shadow-2xl  ' href="/">Blog</a>
 </div>

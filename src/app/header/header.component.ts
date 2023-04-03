@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +7,12 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   showSidenav = false
+  @Output() SideOpen = new EventEmitter<boolean>();
   showSidebar() {
-    console.warn("work")
+
     this.showSidenav = !this.showSidenav
+    this.SideOpen.emit(!this.SideOpen)
 
   }
 }
+
