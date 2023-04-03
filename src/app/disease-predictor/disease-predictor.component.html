@@ -1,0 +1,60 @@
+<div class="dp h-full font-mono bg-primary-100 text-center justify-center">
+
+    <h1 class=" text-secondary-100 text-4xl pt-10 ">Predict Your Disease</h1>
+
+    <form>
+        <div class=" flex flex-col w-60 m-auto justify-center text-center mt-20" ng-app="myApp" ng-controller="myCtrl">
+
+            <select class="border-2 text-secondary-100 border-primary-50 px-10 mb-5 py-1.5" name="demo" id="#">
+                <option *ngFor="let x of names">{{x}}</option>
+            </select>
+            <select class="border-2 text-secondary-100 border-primary-50 px-10 mb-5 py-1.5" name="demo" id="#">
+                <option *ngFor="let x of names">{{x}}</option>
+            </select>
+            <select class="border-2 text-secondary-100 border-primary-50 px-10 mb-5 py-1.5" name="demo" id="#">
+                <option *ngFor="let x of names">{{x}}</option>
+            </select>
+            <select class="border-2 text-secondary-100 border-primary-50 px-10 mb-5 py-1.5" name="demo" id="#">
+                <option *ngFor="let x of names">{{x}}</option>
+            </select>
+            <select class="border-2 text-secondary-100 border-primary-50 px-10 mb-5 py-1.5" name="demo" id="#">
+                <option *ngFor="let x of names">{{x}}</option>
+            </select>
+
+        </div>
+
+        <button type="button" (click)="getData()" class="border-4 p-3 w-40 m-auto bg-secondary-100 rounded-lg text-mono text-primary-50 text-xl
+            hover:bg-secondary-50 hover:border-primary-50">SUBMIT</button>
+
+    </form>
+
+    <table *ngIf="showResult" class="table-auto text-white border-2 mt-10 mx-auto px-3 ">
+        <thead class="text-white border-2 mt-10 mx-auto px-3">
+            <tr>
+                <th>Disease</th>
+                <th>Details</th>
+                <th>Precautions</th>
+            </tr>
+        </thead>
+        <tbody class="text-white border-2 mt-10 mx-auto px-3">
+            <tr>
+                <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
+                <td>Malcolm Lockyer</td>
+                <td>1961</td>
+            </tr>
+            <tr>
+                <td>Witchy Woman</td>
+                <td>The Eagles</td>
+                <td>1972</td>
+            </tr>
+            <tr>
+                <td>Shining Star</td>
+                <td>Earth, Wind, and Fire</td>
+                <td>1975</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+</div>

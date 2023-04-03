@@ -1,0 +1,23 @@
+<div class=" text-center justify-center items-center  h-full bg-primary-100 ">
+    <div class="flex text-4xl  bg-primary-50 pb-32 text-center justify-center pt-10 rounded-br-full rounded-bl-full cursor-pointer"
+        routerLink="/">
+        <img src="./../../assets/Images/left-arrow.png" alt="left-arrow" class="w-10 h-10 mr-2" />Back to the Med
+        Ease
+        Website
+    </div>
+    <h1 class="text-mono text-4xl text-secondary-100 pt-10">
+        REGISTER
+    </h1>
+    <form #SignUp='ngForm' (ngSubmit)="register(SignUp.value)"
+        class="flex flex-col   mx-auto mb-5 mt-10  w-80 space-y-5 ">
+        <input class="p-8 border-2 rounded-lg border-primary-80  text-secondary-100" type="text"
+            placeholder="Enter your email address" name="email" ngModel />
+        <input class="p-8 border-2 rounded-lg border-primary-80 text-secondary-100 " type="password"
+            placeholder="Enter your password" name="password" ngModel />
+        <button type='submit' class="border-4 p-3 w-40 m-auto bg-secondary-100 rounded-lg text-mono text-primary-50 text-xl
+            hover:bg-secondary-50 hover:border-primary-50">SignUp</button>
+    </form>
+    <p routerLink="/login" class="text-secondary-50 animate-pulse cursor-pointer text-xl pb-20">Have an account? Click
+        to
+        Login</p>
+</div>
