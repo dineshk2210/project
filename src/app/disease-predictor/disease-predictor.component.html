@@ -1,32 +1,49 @@
-<div class="dp h-full font-mono bg-primary-100 text-center justify-center">
+<div class="dp h-full font-mono bg-primary-100 text-center justify-center pb-40">
+    <div class="flex justify-evenly">
+        <img src="./../../assets/Images/predict.svg" alt="predict" class="w-1/3">
+        <div>
 
-    <h1 class=" text-secondary-100 text-4xl pt-10 ">Predict Your Disease</h1>
+            <h1 class=" text-secondary-100 text-5xl pt-10 ">Predict Your Disease</h1>
 
-    <form>
-        <div class=" flex flex-col w-60 m-auto justify-center text-center mt-20" ng-app="myApp" ng-controller="myCtrl">
+            <form>
+                <div class=" flex flex-col  m-auto justify-center text-center my-20 " ng-app="myApp"
+                    ng-controller="myCtrl">
 
-            <select class="border-2 text-secondary-100 border-primary-50 px-10 mb-5 py-1.5" name="demo" id="#">
-                <option *ngFor="let x of names">{{x}}</option>
-            </select>
-            <select class="border-2 text-secondary-100 border-primary-50 px-10 mb-5 py-1.5" name="demo" id="#">
-                <option *ngFor="let x of names">{{x}}</option>
-            </select>
-            <select class="border-2 text-secondary-100 border-primary-50 px-10 mb-5 py-1.5" name="demo" id="#">
-                <option *ngFor="let x of names">{{x}}</option>
-            </select>
-            <select class="border-2 text-secondary-100 border-primary-50 px-10 mb-5 py-1.5" name="demo" id="#">
-                <option *ngFor="let x of names">{{x}}</option>
-            </select>
-            <select class="border-2 text-secondary-100 border-primary-50 px-10 mb-5 py-1.5" name="demo" id="#">
-                <option *ngFor="let x of names">{{x}}</option>
-            </select>
+                    <select
+                        class="border-2 text-secondary-100 border-gray-400 px-10 mb-5 py-3 rounded-lg focus:border-secondary-100 focus:border-4"
+                        name="demo" id="#">
+                        <option *ngFor="let x of names">{{x}}</option>
+                    </select>
+                    <select
+                        class="border-2 text-secondary-100 border-gray-400 px-10 mb-5 py-3 rounded-lg focus:border-secondary-100 focus:border-4"
+                        name="demo" id="#">
+                        <option *ngFor="let x of names">{{x}}</option>
+                    </select>
+                    <select
+                        class="border-2 text-secondary-100 border-gray-400 px-10 mb-5 py-3 rounded-lg focus:border-secondary-100 focus:border-4"
+                        name="demo" id="#">
+                        <option *ngFor="let x of names">{{x}}</option>
+                    </select>
+                    <select
+                        class="border-2 text-secondary-100 border-gray-400 px-10 mb-5 py-3 rounded-lg focus:border-secondary-100 focus:border-4"
+                        name="demo" id="#">
+                        <option *ngFor="let x of names">{{x}}</option>
+                    </select>
+                    <select
+                        class="border-2 text-secondary-100 border-gray-400 px-10 mb-5 py-3 rounded-lg focus:border-secondary-100 focus:border-4"
+                        name="demo" id="#">
+                        <option *ngFor="let x of names">{{x}}</option>
+                    </select>
 
-        </div>
+                </div>
 
-        <button type="button" (click)="getData()" class="border-4 p-3 w-40 m-auto bg-secondary-100 rounded-lg text-mono text-primary-50 text-xl
+                <button type="button" (click)="getData()" class="border-4 p-3 w-40 m-auto bg-secondary-100 rounded-lg text-mono text-primary-50 text-xl
             hover:bg-secondary-50 hover:border-primary-50">SUBMIT</button>
 
-    </form>
+            </form>
+
+        </div>
+    </div>
 
     <table *ngIf="showResult" class="table-auto text-white border-2 mt-10 mx-auto px-3 ">
         <thead class="text-white border-2 mt-10 mx-auto px-3">
