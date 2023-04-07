@@ -44,7 +44,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-
+/api
 # Firebase
 .firebase
 *-debug.log

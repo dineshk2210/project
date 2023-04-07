@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
 import { ContentComponent } from './content/content.component';
 import { DiseasePredictorComponent } from './disease-predictor/disease-predictor.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
 
@@ -26,7 +27,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes),
+
+    HttpClientModule
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
