@@ -15,7 +15,12 @@
                 hover:bg-secondary-50 hover:border-primary-50">Select</button>
         </form>
     </div>
-    <div class="text-4xl text-secondary-100 justify-center text-center mx-auto pb-20 " *ngFor="let x of result">
-        <p *ngIf="x.disease==temp.select">{{x.precaution}}</p>
+    <div class="text-4xl text-secondary-100 justify-center text-center " *ngFor="let x of result">
+        <div *ngIf="x.disease==temp.select">
+            <h2 class="pb-10">Precautions of <span class="text-warning-50">{{x.disease}}</span></h2>
+            <li class="text-left p-5" *ngFor="let p of x.precaution">
+            {{p}}
+            </li>
+        </div>
     </div>
 </div>
