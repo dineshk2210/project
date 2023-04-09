@@ -6,6 +6,10 @@ import pickle
 import requests
 with open('backend/NaiveBayes.sav','rb') as f:
     gnb = pickle.load(f)
+with open('backend\RandomForestClassifier.sav','rb') as f:
+    rfc = pickle.load(f)
+with open('backend\DecisionTree.sav','rb') as f:
+    dt = pickle.load(f)
     l1=['back_pain','constipation','abdominal_pain','diarrhoea','mild_fever','yellow_urine',
 'yellowing_of_eyes','acute_liver_failure','fluid_overload','swelling_of_stomach',
 'swelled_lymph_nodes','malaise','blurred_and_distorted_vision','phlegm','throat_irritation',
@@ -66,15 +70,33 @@ def hello_world():
                 l2[k]=1
 
     inputtest = [l2]
-    predict = gnb.predict(inputtest)
-    predicted=predict[0]
-    answer=disease[predicted]
+    predict1 = gnb.predict(inputtest)
+    predicted1=predict1[0]
+    answer1=disease[predicted1]
+
+    predict2 = rfc.predict(inputtest)
+    predicted2=predict2[0]
+    answer2=disease[predicted2]
+
+    predict3 = dt.predict(inputtest)
+    predicted3=predict3[0]
+    answer3=disease[predicted3]
     result={
-        'title':'Gausian',
-        'author':answer
+        'result1':{
+        'model1':'NaiveBayes',
+        'answer1':answer1,
+        },
+        'result2':{
+        'model2':'RandomForestClassifier',
+        'answer2':answer2,
+        },
+        'result3':{
+        'model3':'DecisionTreeClassifier',
+        'answer3':answer3,
         }
-    res=requests.post('http://localhost:3000/posts', json=result)
-    print(disease[predicted])
+        }
+    requests.post('http://localhost:3000/posts', json=result)
+    print(answer1," ",answer2," ",answer3)
 
     return jsonify('hello')
 

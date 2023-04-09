@@ -45,23 +45,50 @@
         </div>
     </div>
 
-    <table *ngIf="showResult" class="table-auto text-white border-2 mt-10 mx-auto px-3 ">
-        <thead class="text-white border-2 mt-10 mx-auto px-3">
-            <tr>
-                <th>Disease</th>
-                <th>model used</th>
-                <th>Precautions</th>
-            </tr>
-        </thead>
-        <tbody class="text-white border-2 mt-10 mx-auto px-3">
-            <tr *ngFor="let item of list">
-                <td *ngIf='item.id==lengthId'>{{item.author}}</td>
-                <td *ngIf='item.id==lengthId'>{{item.title}}</td>
 
-            </tr>
+    <hr *ngIf="showResult" class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700 mx-40">
+    <div *ngIf="showResult">
+        <h1 class="text-secondary-100 text-4xl justify-center text-center mx-auto">Result</h1>
 
-        </tbody>
-    </table>
+        <div class="flex justify-evenly mt-20">
+
+
+            <div class="">
+                <table class="table-auto mt-20 mx-auto px-10 text-2xl ">
+                    <thead class=" text-primary-50 bg-gray-300 border-2 border-primary-50 ">
+                        <tr>
+                            <th>Model used</th>
+                            <th>Disease</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody class="text-primary-50 border-2 border-primary-50 mt-10 mx-auto px-10  bg-secondary-100 ">
+                        <tr *ngFor="let item of list" class="">
+                            <td *ngIf='item.id==list.length'>{{item.result1.model1}}</td>
+                            <td *ngIf='item.id==list.length'>{{item.result1.answer1}}</td>
+
+                        </tr>
+                        <tr *ngFor="let item of list">
+                            <td *ngIf='item.id==list.length'>{{item.result2.model2}}</td>
+                            <td *ngIf='item.id==list.length'>{{item.result2.answer2}}</td>
+
+                        </tr>
+                        <tr *ngFor="let item of list">
+                            <td *ngIf='item.id==list.length'>{{item.result3.model3}}</td>
+                            <td *ngIf='item.id==list.length'>{{item.result3.answer3}}</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <img src="./../../assets/Images/precaution.svg" alt="precaution"
+                class="w-1/6 pt-10 hover:blur-0 hover:w-1/5 cursor-pointer" router-link="">
+        </div>
+    </div>
+
 
 
 
