@@ -34,16 +34,17 @@ export class DiseasePredictorComponent implements OnInit {
   constructor(private connect: ConnectivityService) {
 
   }
-  async printData() {
-    await this.connect.get_post_request().subscribe((data) => {
+  printData() {
+    this.connect.get_post_request().subscribe((data) => {
       this.list = data
       this.lengthId = this.list.length
-      console.log()
+      this.showResult = true
+
     })
   }
   async getData(data: object) {
     await this.connect.send_post_request(data).subscribe()
-    this.showResult = true
+
     this.printData()
 
   }

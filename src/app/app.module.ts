@@ -15,6 +15,9 @@ import { AuthService } from './shared/auth.service';
 import { environment } from 'src/environments/environment';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DiseasePredictorComponent } from './disease-predictor/disease-predictor.component';
+import { PrecautionComponent } from './precaution/precaution.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { AddPrecautionComponent } from './add-precaution/add-precaution.component';
 
 
 @NgModule({
@@ -28,6 +31,9 @@ import { DiseasePredictorComponent } from './disease-predictor/disease-predictor
     DashboardComponent,
     SidebarComponent,
     DiseasePredictorComponent,
+    PrecautionComponent,
+    AboutUsComponent,
+    AddPrecautionComponent,
 
   ],
   imports: [

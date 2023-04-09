@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AuthService } from '../shared/auth.service';
 import { sign } from '../data-types';
 
@@ -19,12 +19,15 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     if (localStorage.getItem('user') !== null)
       this.isSignedIn = true
+
   }
   async login(data: sign) {
 
     await this.auth.login(data)
-    if (this.auth.isLoggedIn)
+    if (this.auth.isLoggedIn) {
       this.isSignedIn = true
+
+    }
   }
 
 }

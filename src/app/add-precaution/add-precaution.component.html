@@ -1,0 +1,14 @@
+<div class="primary-container">
+    <div class="justify-center text-center mx-auto ">
+        <div class=" justify-center text-center mx-auto text-secondary-100 text-4xl py-10">Add Precaution</div>
+        <form #precaution="ngForm" (ngSubmit)="getResult(precaution.value)" class="flex flex-col mx-20">
+            <input type="text" name='disease' ngModel placeholder="Enter Disease" class="border-2 text-secondary-100 border-gray-400 px-6 mb-5 py-3 rounded-lg focus:border-secondary-100
+        focus:border-4 ">
+            <input type="text" name='precaution' ngModel placeholder="Enter Precaution" class="border-2 text-secondary-100 border-gray-400 px-6 mb-5 py-3 rounded-lg focus:border-secondary-100
+        focus:border-4 ">
+            <button type='submit' class="flex-col block border-4 p-3  m-auto bg-secondary-100 rounded-lg text-mono text-center justify-center  text-primary-50 text-xl
+            hover:bg-secondary-50 hover:border-primary-50 mb-40">ADD</button>
+        </form>
+    </div>
+
+</div>
