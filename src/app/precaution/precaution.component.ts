@@ -9,7 +9,7 @@ import { ConnectivityService } from '../shared/connectivity.service';
 export class PrecautionComponent implements OnInit {
   names = ['Fungal infection', 'Allergy', 'GERD', 'Chronic cholestasis', 'Drug Reaction',
     'Peptic ulcer disease', 'AIDS', 'Diabetes', 'Gastroenteritis', 'Bronchial Asthma', 'Hypertension',
-    ' Migraine', 'Cervical spondylosis',
+    'Migraine', 'Cervical spondylosis',
     'Paralysis (brain hemorrhage)', 'Jaundice', 'Malaria', 'Chicken pox', 'Dengue', 'Typhoid', 'hepatitis A',
     'Hepatitis B', 'Hepatitis C', 'Hepatitis D', 'Hepatitis E', 'Alcoholic hepatitis', 'Tuberculosis',
     'Common Cold', 'neumonia', 'Dimorphic hemmorhoids(piles)',
