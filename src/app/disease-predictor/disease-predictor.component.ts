@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ConnectivityService } from '../shared/connectivity.service';
+
+import { ChartComponent } from "ng-apexcharts";
+
 
 @Component({
   selector: 'app-disease-predictor',
@@ -33,15 +36,122 @@ export class DiseasePredictorComponent implements OnInit {
 
   constructor(private connect: ConnectivityService) {
 
+
+
+
+
   }
+
+
+  t1 = 0
+  t2 = 0
+  t3 = 0
+  p1 = ''
+  p2 = ''
+  p3 = ''
+
+  tempResult1 = ""
+  tempResult2 = ""
+  tempResult3 = ""
+  tempArr: any = []
+  v1 = 0
+  v2 = 0
+  v3 = 0
+  tempSet = new Set()
+  elementCount(arr: any, element: any) {
+    return arr.filter((currentElement: any) => currentElement == element).length;
+  };
+  chartOptions = {}
   printData() {
     this.connect.get_post_request().subscribe((data) => {
       this.list = data
+      this.tempResult1 = ''
+      this.tempResult2 = ''
+      this.tempResult3 = ''
+      this.tempArr = []
+      this.tempSet.clear()
+      this.v1 = 0
+      this.v2 = 0
+      this.v3 = 0
+
+      for (let i = 0; i < this.list.length; i++) {
+        if (this.list[i].id == this.list.length) {
+          this.tempResult1 = this.list[i].result1.answer1
+          this.tempResult2 = this.list[i].result2.answer2
+          this.tempResult3 = this.list[i].result3.answer3
+
+        }
+
+      }
+      this.tempArr.push(this.tempResult1)
+      this.tempArr.push(this.tempResult2)
+      this.tempArr.push(this.tempResult3)
+      this.v1 = this.elementCount(this.tempArr, this.tempResult1)
+      this.v2 = this.elementCount(this.tempArr, this.tempResult2)
+      this.v3 = this.elementCount(this.tempArr, this.tempResult3)
+
+      this.tempSet.add(this.tempResult1)
+      this.tempSet.add(this.v1)
+      this.tempSet.add(this.tempResult2)
+      this.tempSet.add(this.v2)
+      this.tempSet.add(this.tempResult3)
+      this.tempSet.add(this.v3)
+
+      this.tempArr = []
+      const myItr = this.tempSet.values()
+      for (const entry of myItr) {
+        this.tempArr.push(entry)
+      }
+
+      if (this.tempArr.length == 6) {
+        this.t1 = this.tempArr[1]
+        this.t2 = this.tempArr[3]
+        this.t3 = this.tempArr[5]
+        this.p1 = this.tempArr[0]
+        this.p2 = this.tempArr[2]
+        this.p3 = this.tempArr[4]
+      }
+      else if (this.tempArr.length == 4) {
+        this.t1 = this.tempArr[1]
+        this.t2 = this.tempArr[3]
+        this.p1 = this.tempArr[0]
+        this.p2 = this.tempArr[2]
+      }
+      else {
+        this.t1 = this.tempArr[1]
+        this.t1 = this.tempArr[0]
+      }
+      console.log(this.tempArr)
+      console.log(this.p1, this.p2, this.p3)
       this.lengthId = this.list.length
       this.showResult = true
 
+
+      this.chartOptions = {
+        animationEnabled: true,
+        theme: "dark2",
+        title: {
+          text: "Predicted Result"
+        },
+        data: [{
+          type: "pie",
+          startAngle: 45,
+          indexLabel: "{name}:{y}",
+          indexLabelPlacement: "inside",
+          yValueFormatString: "#,###.##'%'",
+          dataPoints: [
+            { y: this.t1 / 3 * 100, name: this.p1 },
+            { y: this.t2 / 3 * 100, name: this.p2 },
+            { y: this.t3 / 3 * 100, name: this.p3 },
+
+          ]
+        }]
+      }
     })
   }
+
+
+
   async getData(data: object) {
     await this.connect.send_post_request(data).subscribe()
 
@@ -52,6 +162,8 @@ export class DiseasePredictorComponent implements OnInit {
 
 
   ngOnInit(): void {
+    console.log(this.tempArr)
   }
+
 
 }

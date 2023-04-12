@@ -18,6 +18,8 @@ import { DiseasePredictorComponent } from './disease-predictor/disease-predictor
 import { PrecautionComponent } from './precaution/precaution.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AddPrecautionComponent } from './add-precaution/add-precaution.component';
+import * as CanvasJSAngularChart from '../assets/canvasjs-3.7.5/canvasjs.angular.component';
+var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
 
 @NgModule({
@@ -34,6 +36,7 @@ import { AddPrecautionComponent } from './add-precaution/add-precaution.componen
     PrecautionComponent,
     AboutUsComponent,
     AddPrecautionComponent,
+    CanvasJSChart
 
   ],
   imports: [

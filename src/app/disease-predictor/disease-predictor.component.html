@@ -50,7 +50,7 @@
     <div *ngIf="showResult">
         <h1 class="text-secondary-100 text-4xl justify-center text-center mx-auto">Result</h1>
 
-        <div class="flex justify-evenly mt-20">
+        <div class="flex-col justify-evenly mt-20 space-y-10">
 
 
             <div class="">
@@ -83,9 +83,14 @@
                     </tbody>
                 </table>
             </div>
-
+            <div class="">
+                <canvasjs-chart [options]="chartOptions" class="  w-1/6"></canvasjs-chart>
+            </div>
+            <!-- 
             <img src="./../../assets/Images/precaution.svg" alt="precaution"
-                class="w-1/6 pt-10 hover:blur-0 hover:w-1/5 cursor-pointer" router-link="">
+                class="w-1/6 pt-10 hover:blur-0 hover:w-1/5 cursor-pointer" router-link=""> -->
+            <button type="button" class="border-4 p-3 w-60 m-auto bg-secondary-100 rounded-lg text-mono text-primary-50 text-xl
+                hover:bg-secondary-50 hover:border-primary-50" routerLink="/precaution">Get Precautions</button>
         </div>
     </div>
 
