@@ -1,13 +1,58 @@
 <div class="primary-container">
-    <div class="justify-center text-center mx-auto ">
-        <div class=" justify-center text-center mx-auto text-secondary-100 text-4xl py-10">Add Precaution</div>
-        <form #precaution="ngForm" (ngSubmit)="getResult(precaution.value)" class="flex flex-col mx-20">
-            <input type="text" name='disease' ngModel placeholder="Enter Disease" class="border-2 text-secondary-100 border-gray-400 px-6 mb-5 py-3 rounded-lg focus:border-secondary-100
-        focus:border-4 ">
-            <input type="text" name='precaution' ngModel placeholder="Enter Precaution" class="border-2 text-secondary-100 border-gray-400 px-6 mb-5 py-3 rounded-lg focus:border-secondary-100
-        focus:border-4 ">
-            <button type='submit' class="flex-col block border-4 p-3  m-auto bg-secondary-100 rounded-lg text-mono text-center justify-center  text-primary-50 text-xl
-            hover:bg-secondary-50 hover:border-primary-50 mb-40">ADD</button>
+    <div class="justify-center items-center text-center  pb-20">
+        <div class=" justify-center text-center font-semibold mx-auto text-secondary-100 text-5xl pb-20">Add Precaution
+        </div>
+        <form #precaution="ngForm" (ngSubmit)="getResult(precaution.value)"
+            class="flex flex-col lg:w-[700px] mx-auto shadow-2xl bg-primary-80 bg-opacity-60 rounded-2xl space-y-5 p-20  space-x-10">
+
+            <div class="flex flex-col  space-y-10">
+                <div class="flex flex-col space-y-5">
+                    <label class="text-2xl">Disease</label>
+                    <input type="text" name='disease' ngModel placeholder="Enter Disease" class="border-2 text-secondary-100 border-gray-400 px-6 mb-5 py-3 rounded-lg focus:border-secondary-100
+                    focus:border-4 ">
+                </div>
+                <div class="flex flex-col  space-y-5 pb-10">
+                    <label class="text-2xl">Precaution</label>
+                    <input type="text" name='precaution' ngModel placeholder="Enter Precaution" class="border-2 text-secondary-100 border-gray-400 px-6 mb-5 py-3 rounded-lg focus:border-secondary-100
+                    focus:border-4 ">
+                </div>
+            </div>
+
+            <div class="flex flex-col  space-y-5">
+                <div class="flex flex-col  lg:flex-row space-x-5 ">
+                    <label class="text-2xl">Symptom1</label>
+                    <input type="text" name='Symptom1' ngModel placeholder="Symptom 1" class="border-2 text-secondary-100 border-gray-400 px-6 mb-5 py-3 rounded-lg focus:border-secondary-100
+                        focus:border-4 ">
+                </div>
+                <div class="flex flex-col  lg:flex-row space-x-5">
+                    <label class="text-2xl">Symptom2</label>
+                    <input type="text" name='Symptom2' ngModel placeholder="Symptom 2" class="border-2 text-secondary-100 border-gray-400 px-6 mb-5 py-3 rounded-lg focus:border-secondary-100
+                        focus:border-4 ">
+                </div>
+                <div class="flex flex-col  lg:flex-row space-x-5">
+                    <label class="text-2xl">Symptom3</label>
+                    <input type="text" name='Symptom3' ngModel placeholder="Symptom 3" class="border-2 text-secondary-100 border-gray-400 px-6 mb-5 py-3 rounded-lg focus:border-secondary-100
+                        focus:border-4 ">
+                </div>
+                <div class="flex flex-col  lg:flex-row space-x-5">
+                    <label class="text-2xl">Symptom4</label>
+                    <input type="text" name='Symptom4' ngModel placeholder="Symptom 4" class="border-2 text-secondary-100 border-gray-400 px-6 mb-5 py-3 rounded-lg focus:border-secondary-100
+                        focus:border-4 ">
+                </div>
+                <div class="flex flex-col  lg:flex-row space-x-5">
+                    <label class="text-2xl">Symptom5</label>
+                    <input type="text" name='Symptom5' ngModel placeholder="Symptom 5" class="border-2 text-secondary-100 border-gray-400 px-6 mb-5 py-3 rounded-lg focus:border-secondary-100
+                        focus:border-4 ">
+                </div>
+
+
+            </div>
+
+            <div class="mx-auto pt-10">
+                <button type='submit' class=" lg:w-[200px]  block border-4  items-center  p-3  mx-auto bg-secondary-100 rounded-lg font-mono text-center  justify-center  text-primary-50 text-xl
+                hover:bg-secondary-50 hover:border-primary-50 ">Add Information</button>
+            </div>
+
         </form>
     </div>
 

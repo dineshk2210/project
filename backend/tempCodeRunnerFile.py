@@ -1,4 +1,1 @@
-,len(l1)):
-    #     for z in psymptoms:
-    #         if(z==l1[k]):
-    #             l2[k]=1
+http://localhost:3000/Disease_Information

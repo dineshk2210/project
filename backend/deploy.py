@@ -4,11 +4,11 @@ import json
 import pickle
 
 import requests
-with open('backend/NaiveBayes.sav','rb') as f:
+with open('NaiveBayes.sav','rb') as f:
     gnb = pickle.load(f)
-with open('backend\RandomForestClassifier.sav','rb') as f:
+with open('RandomForestClassifier.sav','rb') as f:
     rfc = pickle.load(f)
-with open('backend\DecisionTree.sav','rb') as f:
+with open('DecisionTree.sav','rb') as f:
     dt = pickle.load(f)
     l1=['back_pain','constipation','abdominal_pain','diarrhoea','mild_fever','yellow_urine',
 'yellowing_of_eyes','acute_liver_failure','fluid_overload','swelling_of_stomach',

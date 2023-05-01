@@ -8,7 +8,7 @@ export class ConnectivityService {
   constructor(private http: HttpClient) { }
 
   apiUrl = 'http://localhost:3000/posts'
-  dataUrl = 'http://localhost:3000/comments'
+  dataUrl = 'http://localhost:3000/Disease_Information'
   server_address = "http://localhost:5000"
   send_post_request(data: object) {
     return this.http.post(
