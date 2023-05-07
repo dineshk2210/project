@@ -2,6 +2,8 @@ from flask import Flask, jsonify,request
 # from flask_cors import CORS
 import json
 import pickle
+import pandas as pd
+import numpy as np
 
 import requests
 with open('NaiveBayes.sav','rb') as f:
@@ -100,6 +102,142 @@ def hello_world():
 
     return jsonify('hello')
 
+
+# update
+
+@app.route('/update',methods=['POST'])
+def hello():
+    
+    result=requests.get('http://localhost:3000/Disease_Information')
+    data=result.json()
+    # print(result.json()[0]['disease'])
+    New_disease=data[-1]['disease']
+    
+    
+    train=pd.read_csv('Training.csv',)
+    # a=train[['prognosis']]
+    # b=np.ravel(a)
+    # disease=np.unique(b)
+    # total_disease=len(np.unique(b))
+
+    
+    symptoms=[]
+    for i in train:
+        if(i!='prognosis'):
+            symptoms.append(i)
+    # print(len(symptoms))
+
+    
+    New_Symptoms=[]
+    
+    if data[-1]['Symptom1']  not in symptoms:
+            New_Symptoms.append(data[-1]['Symptom1'])
+    if data[-1]['Symptom2']  not in symptoms:
+            New_Symptoms.append(data[-1]['Symptom2'])
+    if data[-1]['Symptom2']  not in symptoms:
+            New_Symptoms.append(data[-1]['Symptom3'])
+    if data[-1]['Symptom2']  not in symptoms:
+            New_Symptoms.append(data[-1]['Symptom4'])
+    if data[-1]['Symptom2']  not in symptoms:
+            New_Symptoms.append(data[-1]['Symptom5'])
+            
+       
+    for i in New_Symptoms:
+         train[i]=0
+    print(New_Symptoms)
+    
+
+    new_row_data=[]
+    count_col=len(train.columns)
+    for i in range(count_col):
+        new_row_data.append(0)
+    new_row_dict = {}
+    for i, col in enumerate(train.columns):
+        new_row_dict[col] = new_row_data[i]
+
+    # print(new_row_dict)
+    # # Append the new row to the DataFrame
+    # train = train.append(new_row_dict, ignore_index=True)
+    t= pd.concat([train, pd.DataFrame([new_row_dict])], ignore_index=True)
+    
+    last_index = train.index[-1]
+    t.loc[last_index,data[-1]['Symptom1']]=1
+    t.loc[last_index,data[-1]['Symptom2']]=1
+    t.loc[last_index,data[-1]['Symptom3']]=1
+    t.loc[last_index,data[-1]['Symptom4']]=1
+    t.loc[last_index,data[-1]['Symptom5']]=1
+    t.loc[last_index,"prognosis"]=New_disease
+ 
+    
+
+    t.to_csv("Training.csv")
+
+
+    # train.loc[last_index,"prognosis"]=New_disease
+    # print(train['prognosis'])
+    
+    
+    
+
+
+
+    return jsonify('hello')
+
+
+# data=request.get('http://localhost:3000/Disease_Information')
+
+
+
+
+  
+
+# print(disease)
+# s1=""
+# s2=""
+# s3=""
+# s4=""
+# s5=""
+# symptoms=[]
+# for i in data:
+#     if i not in data:
+        
+#         symptoms.append(i['Symptom1'])
+#         s1=i['Symptom1']
+#         symptoms.append(i['Symptom2'])
+#         s2=i['Symptom2']
+#         symptoms.append(i['Symptom3'])
+#         s3=i['Symptom3']
+#         symptoms.append(i['Symptom4'])
+#         s4=i['Symptom4']
+#         symptoms.append(i['Symptom5'])
+#         s5=i['Symptom5']
+
+# # df["sirdrd"]=0
+# for i in symptoms:
+#     df[i]=0
+
+# new_row_data=[]
+# count_col=len(df.columns)
+# for i in range(count_col):
+#   new_row_data.append(0)
+# new_row_dict = {}
+# for i, col in enumerate(df.columns):
+#     new_row_dict[col] = new_row_data[i]
+
+# # # Append the new row to the DataFrame
+# df = df.append(new_row_dict, ignore_index=True)
+
+# df = df.drop(last_index)
+# last_index = df.index[-1]
+
+# df.loc[last_index,s1]=1
+# df.loc[last_index,s2]=1
+# df.loc[last_index,s3]=1
+# df.loc[last_index,s4]=1
+# df.loc[last_index,s5]=1
+# # df.loc[last_index, "sirdrd"] = 1
+# df.loc[last_index,"prognosis"]=disease
+# # df.loc[last_index, "acidity"] = 1
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -11,6 +11,7 @@ import { AuthGuard } from './auth.guard';
 import { PrecautionComponent } from './precaution/precaution.component';
 import { AddPrecautionComponent } from './add-precaution/add-precaution.component';
 
+
 const routes: Routes = [
 
   {
@@ -43,7 +44,8 @@ const routes: Routes = [
   {
     path: 'addPrecaution', component: AddPrecautionComponent,
     canActivate: [AuthGuard]
-  }
+  },
+
 ];
 
 @NgModule({

@@ -19,6 +19,8 @@ import { PrecautionComponent } from './precaution/precaution.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AddPrecautionComponent } from './add-precaution/add-precaution.component';
 import * as CanvasJSAngularChart from '../assets/canvasjs-3.7.5/canvasjs.angular.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
 
@@ -43,6 +45,7 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    BrowserAnimationsModule,
 
     AngularFireModule.initializeApp(environment.firebase),
 
