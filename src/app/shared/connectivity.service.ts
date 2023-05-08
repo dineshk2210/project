@@ -13,10 +13,13 @@ export class ConnectivityService {
   update_address = "http://localhost:5000/update"
 
   send_post_request(data: object) {
+    console.log("work")
     return this.http.post(
       this.server_address,
       JSON.stringify(data)
+
     )
+
   }
 
   get_post_request() {

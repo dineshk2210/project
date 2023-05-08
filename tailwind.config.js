@@ -11,6 +11,22 @@ module.exports = {
       fontFamily: {
         'poppins': ['Poppins']
       },
+      animation: {
+        'vote': 'vote 1s ease-in-out ',
+    },
+    keyframes: {
+        vote: {
+            '0%': {
+
+              opacity:0,
+                transform:'translateX(-200px)'
+            },
+            '100%': {
+              opacity:100,
+                transform: 'translateX(0px)'
+            },
+        }
+    },
       colors:{
         primary:{
           100:'#1d2026',

@@ -1,5 +1,6 @@
-<div *ngIf="showSideNav"
-        class="  fixed  text-2xl  font-mono trasition-all  text-gray-300  h-full w-[300px]   ease-in-out delay-150 duration-300  deley-150  bg-primary-100 border border-gray-600 border-t-none border-l-0 shadow-2xl    ">
+<div [ngClass]="showSideNav?'w-[300px] opacity-100':'w-0 opacity-0'"
+        class="  transition-weight duration-500
+        fixed  text-2xl  text-gray-300   h-full  bg-primary-100 border border-gray-600 border-t-none border-l-0 shadow-2xl    ">
         <div class=" flex flex-col">
                 <a class='border-gray-600 border-2  border-t-0 p-5  hover:border-gray-600 hover:bg-secondary-100
                     hover:text-primary-50 shadow-2xl  ' href="/">Dashboard</a>

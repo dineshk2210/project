@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ConnectivityService } from '../shared/connectivity.service';
 
 import { ChartComponent } from "ng-apexcharts";
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -151,15 +152,18 @@ export class DiseasePredictorComponent implements OnInit {
   }
 
 
+  getData(data: object) {
 
-  async getData(data: object) {
-    await this.connect.send_post_request(data).subscribe()
+    console.log(data)
+    // await this.connect.send_post_request(data).subscribe()
 
-    this.printData()
+    // this.printData()
 
   }
 
-
+  clck() {
+    console.log("dadadadada")
+  }
 
   ngOnInit(): void {
     console.log(this.tempArr)

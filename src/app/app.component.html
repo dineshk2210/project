@@ -1,20 +1,30 @@
-<app-header (SideOpen)=onSide()></app-header>
-<!-- <div class="flex ">
+<div class="relative">
+
+    <app-header (SideOpen)=onSide()></app-header>
+    <!-- <div class="flex ">
     <div class="flex"></div>
     <div class="flex"></div>
 
 </div> -->
-<!-- <app-login></app-login> -->
-<div class="flex ">
-    <div class="z-10">
-        <app-sidebar [showSideNav]="showSideNav"></app-sidebar>
-    </div>
-    <div class="flex-1 z-0 " [ngClass]="showSideNav?'opacity-80 cursor-not-allowed':'opacity-100'">
-        <router-outlet></router-outlet>
+    <!-- <app-login></app-login> -->
+    <div class="flex relative ">
+        <div class="z-10 ">
+            <app-sidebar [showSideNav]="showSideNav"></app-sidebar>
+        </div>
+        <div class="transiton-opacity flex-1 z-0 " (click)="showSideNav=false"
+            [ngClass]="showSideNav?'opacity-80 cursor-not-allowed':'opacity-100'">
+            <router-outlet></router-outlet>
+        </div>
+
+
+
     </div>
 
+
+    <div class="fixed right-5 bottom-5">
+        <app-chatbot></app-chatbot>
+    </div>
+    <app-footer></app-footer>
 
 </div>
-<div></div>
-<app-footer></app-footer>
 <!-- <router-outlet></router-outlet> -->
