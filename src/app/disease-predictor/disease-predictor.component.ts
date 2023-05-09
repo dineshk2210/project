@@ -3,6 +3,7 @@ import { ConnectivityService } from '../shared/connectivity.service';
 
 import { ChartComponent } from "ng-apexcharts";
 import { NgForm } from '@angular/forms';
+import { isNgTemplate } from '@angular/compiler';
 
 
 @Component({
@@ -42,15 +43,16 @@ export class DiseasePredictorComponent implements OnInit {
 
 
   }
-
-
+disease:any
+   result:any
   t1 = 0
   t2 = 0
   t3 = 0
   p1 = ''
   p2 = ''
   p3 = ''
-
+  temp: any
+  len:any
   tempResult1 = ""
   tempResult2 = ""
   tempResult3 = ""
@@ -64,8 +66,28 @@ export class DiseasePredictorComponent implements OnInit {
   };
   chartOptions = {}
   printData() {
+    
+
+    
+
+
+
+    
+
     this.connect.get_post_request().subscribe((data) => {
       this.list = data
+
+
+       this.disease=this.list[this.list.length - 1].result1.answer1
+      console.log()
+      
+      this.connect.get_data_post().subscribe((data)=>{
+        this.result=data
+      })
+      console.log(this.result)
+
+
+
       this.tempResult1 = ''
       this.tempResult2 = ''
       this.tempResult3 = ''
@@ -122,8 +144,8 @@ export class DiseasePredictorComponent implements OnInit {
         this.t1 = this.tempArr[1]
         this.t1 = this.tempArr[0]
       }
-      console.log(this.tempArr)
-      console.log(this.p1, this.p2, this.p3)
+      // console.log(this.tempArr)
+      // console.log(this.p1, this.p2, this.p3)
       this.lengthId = this.list.length
       this.showResult = true
 
@@ -152,18 +174,20 @@ export class DiseasePredictorComponent implements OnInit {
   }
 
 
-  getData(data: object) {
+  async   getData(data: object) {
 
-    console.log(data)
-    // await this.connect.send_post_request(data).subscribe()
+    // console.log(data)
+    await this.connect.send_post_request(data).subscribe()
 
-    // this.printData()
+    this.printData()
 
   }
 
-  clck() {
-    console.log("dadadadada")
-  }
+  
+ 
+
+ 
+  
 
   ngOnInit(): void {
     console.log(this.tempArr)

@@ -9,73 +9,69 @@
                 Predict
                 Your Disease</h1>
 
-            <form #predict="ngForm" (ngSubmit)="getData(predict.value)">
-                <div
-                    class=" flex flex-col  bg-primary-80 shadow-lg mx-auto justify-center shadow-black p-10 rounded-2xl items-center text-center my-20  space-y-10">
-
-                    <div class="flex space-x-5">
-                        <label class="text-3xl text-secondary-50 font-bold">Symptom 1</label>
-                        <select
-                            class="border-2 outline-none bg-transparent rounded-full text-secondary-100 text-xl  border-gray-400 px-10 mb-5 py-3  focus:border-secondary-100 focus:border-4"
-                            name="S1" ngModel>
-                            <option value="" disabled>Choose Symptom</option>
-                            <option *ngFor="let x of names">{{x}}</option>
-                        </select>
-                    </div>
+            <form #predict='ngForm' (ngSubmit)="getData(predict.value)"
+                class=" flex flex-col  bg-primary-80 shadow-lg mx-auto justify-center shadow-black p-10 rounded-2xl items-center text-center my-20  space-y-10">
 
 
-                    <div class="flex space-x-5">
-                        <label class="text-3xl text-secondary-50 font-bold ">Symptom 2</label>
-                        <select
-                            class="border-2 outline-none bg-transparent rounded-full text-secondary-100 text-xl  border-gray-400 px-10 mb-5 py-3  focus:border-secondary-100 focus:border-4"
-                            name="S2" ngModel>
-                            <option value="" disabled>Choose Symptom</option>
-                            <option *ngFor="let x of names">{{x}}</option>
-                        </select>
-                    </div>
-
-                    <div class="flex space-x-5">
-                        <label class="text-3xl text-secondary-50 font-bold">Symptom 3</label>
-                        <select
-                            class="border-2 outline-none bg-transparent rounded-full  text-secondary-100  text-xl border-gray-400 px-10 mb-5 py-3  focus:border-secondary-100 focus:border-4"
-                            name="S3" ngModel>
-                            <option value="" disabled>Choose Symptom</option>
-                            <option *ngFor="let x of names">{{x}}</option>
-                        </select>
-                    </div>
-
-
-                    <div class="flex space-x-5">
-                        <label class="text-3xl text-secondary-50 font-bold">Symptom 4</label>
-                        <select
-                            class="border-2  outline-none bg-transparent rounded-full  text-secondary-100 text-xl border-gray-400 px-10 mb-5 py-3 focus:border-secondary-100 focus:border-4"
-                            name="S4" ngModel>
-                            <option value="" disabled>Choose Symptom</option>
-                            <option *ngFor="let x of names">{{x}}</option>
-                        </select>
-                    </div>
-
-
-                    <div class="flex space-x-5">
-                        <label class="text-3xl text-secondary-50 font-bold">Symptom 5</label>
-                        <select
-                            class="border-2 outline-none bg-transparent rounded-full  text-secondary-100 text-xl border-gray-400 px-10 mb-5 py-3 focus:border-secondary-100 focus:border-4"
-                            name="S5" ngModel>
-                            <option value="" disabled>Choose Symptom</option>
-                            <option *ngFor="let x of names">{{x}}</option>
-                        </select>
-                    </div>
-
-
-
-                    <button type="submit" class="border-4 p-3 w-40   bg-secondary-100 rounded-full font-bold tracking-[5px] text-primary-50 text-xl
-                    hover:bg-secondary-50 hover:border-primary-50">
-                        SUBMIT
-                    </button>
-
+                <div class="flex space-x-5">
+                    <label class="text-3xl text-secondary-50 font-bold">Symptom 1</label>
+                    <select
+                        class="border-2 outline-none bg-transparent rounded-full text-secondary-100 text-xl  border-gray-400 px-10 mb-5 py-3  focus:border-secondary-100 focus:border-4"
+                        name="S1" id="#S1" ngModel>
+                        <option value="" disabled>Choose Symptom</option>
+                        <option *ngFor="let x of names" value="S1">{{x}}</option>
+                    </select>
                 </div>
 
 
+                <div class="flex space-x-5">
+                    <label class="text-3xl text-secondary-50 font-bold ">Symptom 2</label>
+                    <select
+                        class="border-2 outline-none bg-transparent rounded-full text-secondary-100 text-xl  border-gray-400 px-10 mb-5 py-3  focus:border-secondary-100 focus:border-4"
+                        name="S2" id="#S2" ngModel>
+                        <option value="" disabled>Choose Symptom</option>
+                        <option *ngFor="let x of names" value="S2">{{x}}</option>
+                    </select>
+                </div>
+
+                <div class="flex space-x-5">
+                    <label class="text-3xl text-secondary-50 font-bold">Symptom 3</label>
+                    <select
+                        class="border-2 outline-none bg-transparent rounded-full  text-secondary-100  text-xl border-gray-400 px-10 mb-5 py-3  focus:border-secondary-100 focus:border-4"
+                        name="S3" id="#S3" ngModel>
+                        <option value="" disabled>Choose Symptom</option>
+                        <option *ngFor="let x of names" value="S3">{{x}}</option>
+                    </select>
+                </div>
+
+
+                <div class="flex space-x-5">
+                    <label class="text-3xl text-secondary-50 font-bold">Symptom 4</label>
+                    <select
+                        class="border-2  outline-none bg-transparent rounded-full  text-secondary-100 text-xl border-gray-400 px-10 mb-5 py-3 focus:border-secondary-100 focus:border-4"
+                        name="S4" id="#S4" ngModel>
+                        <option value="" disabled>Choose Symptom</option>
+                        <option *ngFor="let x of names" value="S4">{{x}}</option>
+                    </select>
+                </div>
+
+
+                <div class="flex space-x-5">
+                    <label class="text-3xl text-secondary-50 font-bold">Symptom 5</label>
+                    <select
+                        class="border-2 outline-none bg-transparent rounded-full  text-secondary-100 text-xl border-gray-400 px-10 mb-5 py-3 focus:border-secondary-100 focus:border-4"
+                        name="S5" id="#S5" ngModel>
+                        <option value="" disabled>Choose Symptom</option>
+                        <option *ngFor="let x of names" value="S5">{{x}}</option>
+                    </select>
+                </div>
+
+
+
+                <button (click)="getData(predict.value)" class="border-4 p-3 w-40   bg-secondary-100 rounded-full font-bold tracking-[5px] text-primary-50 text-xl
+                    hover:bg-secondary-50 hover:border-primary-50">
+                    SUBMIT
+                </button>
 
 
             </form>
@@ -103,32 +99,31 @@
                     </thead>
                     <tbody class="text-primary-50 border-2 border-primary-50 mt-10 mx-auto px-10  bg-secondary-100 ">
                         <tr *ngFor="let item of list" class="">
-                            <td *ngIf='item.id==list.length'>{{item.result1.model1}}</td>
+                            <td *ngIf='item.id==list.length'>Predicted Disease</td>
                             <td *ngIf='item.id==list.length'>{{item.result1.answer1}}</td>
-
                         </tr>
-                        <tr *ngFor="let item of list">
-                            <td *ngIf='item.id==list.length'>{{item.result2.model2}}</td>
-                            <td *ngIf='item.id==list.length'>{{item.result2.answer2}}</td>
 
-                        </tr>
-                        <tr *ngFor="let item of list">
-                            <td *ngIf='item.id==list.length'>{{item.result3.model3}}</td>
-                            <td *ngIf='item.id==list.length'>{{item.result3.answer3}}</td>
-
-                        </tr>
 
                     </tbody>
                 </table>
             </div>
-            <div class="">
-                <canvasjs-chart [options]="chartOptions" class="  w-1/6"></canvasjs-chart>
-            </div>
+
             <!-- 
             <img src="./../../assets/Images/precaution.svg" alt="precaution"
                 class="w-1/6 pt-10 hover:blur-0 hover:w-1/5 cursor-pointer" router-link=""> -->
-            <button type="button" class="border-4 p-3 w-60 m-auto bg-secondary-100 rounded-lg text-mono text-primary-50 text-xl
-                hover:bg-secondary-50 hover:border-primary-50" routerLink="/precaution">Get Precautions</button>
+
+
+
+            <div class="  text-4xl text-secondary-100 justify-center items-center mx-auto text-center p-10 "
+                *ngFor="let x of result">
+                <div *ngIf="x.disease===disease " class="mx-auto bg-primary-80 p-20 w-[60%] rounded-2xl shadow-lg shadow-black">
+                    <h2 class="pb-10">Precautions of <span class="text-warning-50">{{x.disease}}</span></h2>
+                    <li class="text-left p-5" *ngFor="let p of x.precaution">
+                        <h1 *ngIf="x.precaution!=='' ">{{p}}</h1>
+                    </li>
+                </div>
+            </div>
+
         </div>
     </div>
 
