@@ -1,5 +1,6 @@
-<div *ngIf="showSideNav"
-        class="   text-2xl  font-mono text-gray-300  h-full w-full transition-transform duration-[600ms] ease-in-out bg-primary-50   ">
+<div [ngClass]="showSideNav?'w-[300px] opacity-100':'w-0 opacity-0'"
+        class="  transition-weight duration-500
+        fixed  text-2xl  text-gray-300   h-full  bg-primary-100 border border-gray-600 border-t-none border-l-0 shadow-2xl    ">
         <div class=" flex flex-col">
                 <a class='border-gray-600 border-2  border-t-0 p-5  hover:border-gray-600 hover:bg-secondary-100
                     hover:text-primary-50 shadow-2xl  ' href="/">Dashboard</a>
@@ -8,10 +9,11 @@
                 <a class='border-gray-600 border-2  border-t-0 p-5  hover:border-gray-600 hover:bg-secondary-100
                 hover:text-primary-50 shadow-2xl ' routerLink='precaution'>Precaution</a>
                 <a class='border-gray-600 border-2  border-t-0 p-5  hover:border-gray-600 hover:bg-secondary-100
-                hover:text-primary-50 shadow-2xl  ' routerLink="addPrecaution">Add Precaution</a>
+                hover:text-primary-50 shadow-2xl  ' routerLink="addPrecaution">Add Details</a>
                 <a class='border-gray-600 border-2  border-t-0 p-5  hover:border-gray-600 hover:bg-secondary-100
                 hover:text-primary-50 shadow-2xl  ' href="/">Blog</a>
                 <a class='border-gray-600 border-2  border-t-0 p-5  hover:border-gray-600 hover:bg-secondary-100
                 hover:text-primary-50 shadow-2xl  ' routerLink="about">About Us</a>
+
         </div>
 </div>

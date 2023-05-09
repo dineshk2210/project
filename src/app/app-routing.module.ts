@@ -10,6 +10,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { AuthGuard } from './auth.guard';
 import { PrecautionComponent } from './precaution/precaution.component';
 import { AddPrecautionComponent } from './add-precaution/add-precaution.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
 
 const routes: Routes = [
 
@@ -43,7 +44,12 @@ const routes: Routes = [
   {
     path: 'addPrecaution', component: AddPrecautionComponent,
     canActivate: [AuthGuard]
-  }
+  },
+  // {
+  //   component: ChatbotComponent,
+  //   canActivate: [AuthGuard]
+  // }
+
 ];
 
 @NgModule({

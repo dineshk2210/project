@@ -8,8 +8,13 @@ import { AuthService } from '../shared/auth.service';
 })
 export class HeaderComponent {
   constructor(private auth: AuthService) {
-
+    let data = localStorage.getItem("user");
+    let a = JSON.parse(data || '{}')
+    console.log(a.photoURL);
   }
+  user = JSON.parse(localStorage.getItem(`user`) || "{}")
+  image = this.user.photoURL
+
   showSidenav = false
   showThreeDot = this.auth.isLoggedIn;
 
@@ -23,5 +28,6 @@ export class HeaderComponent {
   logout() {
     this.auth.logout()
   }
+
 }
 

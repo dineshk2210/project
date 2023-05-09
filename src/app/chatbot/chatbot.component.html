@@ -1,0 +1,38 @@
+<div class=" justify-end items-center w-[500px] ">
+    <div [ngClass]="showChat?'opacity-100 ':'opacity-0 '" class="transition-opacity duration-500">
+        <div
+            class="  duration-500 bg-secondary-100 space-x-10 p-5 flex justify-center items-center  rounded-lg rounded-b-none ">
+
+            <img src="assets\Images\bot.png" alt=""
+                class=" fill-yellow-700 h-20 w-20 p-5 bg-primary-100 rounded-full shadow-inner shadow-white" />
+            <div>
+                <h1
+                    class="text-2xl text-primary-100 font-bold flex-1 justify-center items-center text-center tracking-widest">
+                    Hi There, </h1>
+                <h1
+                    class="text-2xl text-primary-100 font-bold flex-1 justify-center items-center text-center tracking-widest">
+                    How can
+                    i help you?</h1>
+            </div>
+
+
+        </div>
+
+
+        <div
+            class="flex  h-[500px] bg-white border-4 border-secondary-100 rounded-t-none rounded-lg rounded-b-none space-y-10 p-5">
+        </div>
+        <div class="  bg-secondary-100 space-x-10 p-5 flex rounded-lg rounded-t-none mb-10">
+            <input type="text" class="flex-1 outline-none p-3 bg-secondary-50 rounded-2xl text-xl"
+                placeholder="Enter Your Question">
+            <img src="assets\Images\send.png" alt=""
+                class=" h-14 w-14 text-3xl text-primary-50 tracking-[5px] font-bold" />
+        </div>
+    </div>
+
+    <div class="primary-container  bg-transparent flex justify-end items-end ">
+        <img src="assets\Images\chatbot.png" alt=""
+            class="fill-yellow-700 h-20 w-20 p-5 text-yellow-300 bg-secondary-100 cursor-pointer rounded-full shadow-inner shadow-white"
+            (click)="showChatBot()">
+    </div>
+</div>
