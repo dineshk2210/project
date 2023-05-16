@@ -1,5 +1,12 @@
 from flask import Flask, jsonify,request
 # from flask_cors import CORS
+from twilio.rest import Client
+from env import *
+
+sid = sid
+auth_token = auth_token
+
+client = Client(sid, auth_token)
 import json
 import pickle
 import pandas as pd
@@ -81,6 +88,7 @@ def hello_world():
     a=train[['prognosis']]
     b=np.ravel(a)
     disease=np.unique(b)
+    total_disease=len(np.unique(b))
 
 
     element=json.loads(data)
@@ -91,12 +99,25 @@ def hello_world():
     Symptom5=element['S5']
     psymptoms=[Symptom1,Symptom2,Symptom3,Symptom4,Symptom5]
     
+    j={}
+    for i in range(0,total_disease):
+        key=disease[i]
+        value=i
+        j[key]=value
+    res={}
+    res['prognosis']=j
+         
+         
+    train.replace(res,inplace=True)
+
     for k in range(0,len(l1)):
         for z in psymptoms:
             if(z==l1[k]):
                 l2[k]=1
 
     inputtest = [l2]
+    print("----------------------------------->>>>>>>>>>>>>>>>>>>>>>>")
+    print(inputtest)
     predict1 = gnb.predict(inputtest)
     predicted1=predict1[0]
     answer1=disease[predicted1]
@@ -126,6 +147,7 @@ def hello_world():
     print(answer1," ",answer2," ",answer3)
 
 
+    
     return jsonify('hello')
 
 
@@ -265,6 +287,29 @@ def hello():
 
     return jsonify('hello')
 
+# sending information to mobile 
+@app.route('/sms',methods=['POST'])
+def phone():
+        sms=request.data
+        print("        ")
+        # print("------------------------------------------------------",sms)
+        res=json.loads(sms)
+        # print("------------",res['hospitalName'])
+        data={'Disease':res['disease'],
+                #   'Hospital_Name':res['hospitalName'],
+                #   'Hospital_Address':res['hospitalAddress'],
+                #   'Doctor_Name':res['doctorName'],
+                #   'Doctor_Address':res['doctorAddress'],
+            }
+        json_data = json.dumps(data)
+        message=client.messages.create(
+            body=json_data,
+            from_="+12708106437",
+            to="+919140918621"
+        )
+        print(message.body)
+    
+        return jsonify('hello')
 
 
 

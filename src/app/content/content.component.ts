@@ -7,7 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    let data:object
+      data=JSON.parse(localStorage.getItem('user')||"{}")
+      console.log(data)
+   }
   @Input() showSideNav: boolean = false
   ngOnInit(): void {
   }

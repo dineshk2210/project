@@ -28,5 +28,8 @@ export class AppComponent {
   ngOninit() {
     this.showSideNav = !this.showSideNav;
   }
+  backToTop(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
 }

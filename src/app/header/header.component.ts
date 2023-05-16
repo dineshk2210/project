@@ -8,9 +8,11 @@ import { AuthService } from '../shared/auth.service';
 })
 export class HeaderComponent {
   constructor(private auth: AuthService) {
+   
     let data = localStorage.getItem("user");
     let a = JSON.parse(data || '{}')
-    console.log(a.photoURL);
+    console.log(a.uid);
+    
   }
   user = JSON.parse(localStorage.getItem(`user`) || "{}")
   image = this.user.photoURL

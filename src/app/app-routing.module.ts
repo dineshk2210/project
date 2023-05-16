@@ -11,6 +11,8 @@ import { AuthGuard } from './auth.guard';
 import { PrecautionComponent } from './precaution/precaution.component';
 import { AddPrecautionComponent } from './add-precaution/add-precaution.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
+import { Register2Component } from './register2/register2.component';
+import { BlogComponent } from './blog/blog.component';
 
 const routes: Routes = [
 
@@ -45,11 +47,16 @@ const routes: Routes = [
     path: 'addPrecaution', component: AddPrecautionComponent,
     canActivate: [AuthGuard]
   },
-  // {
-  //   component: ChatbotComponent,
-  //   canActivate: [AuthGuard]
-  // }
 
+  {
+    path:'register2',component: Register2Component,
+    canActivate: [AuthGuard]
+  },
+  {
+    path:'blog',
+    component:BlogComponent,
+    canActivate: [AuthGuard]
+  }
 ];
 
 @NgModule({

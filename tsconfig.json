@@ -12,6 +12,8 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
+    "esModuleInterop": true,
+    "types": ["node"],
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
