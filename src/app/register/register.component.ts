@@ -17,7 +17,8 @@ export class RegisterComponent implements OnInit {
   async register(data: sign) {
 
     await this.auth.register(data)
-
+   
+      
   }
 
 }

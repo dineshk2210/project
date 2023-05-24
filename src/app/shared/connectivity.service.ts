@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,6 +12,8 @@ export class ConnectivityService {
   dataUrl = 'http://localhost:3000/Disease_Information'
   server_address = "http://localhost:5000"
   update_address = "http://localhost:5000/update"
+  userURL="http://localhost:3000/user"
+  sms="http://localhost:5000/sms"
 
   send_post_request(data: object) {
     console.log("work")
@@ -21,7 +24,14 @@ export class ConnectivityService {
     )
 
   }
+  add_additional(id:number,data:any):Observable<any>{
 
+    console.log(id,data)
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    
+    const url = `${this.userURL}/${id}`
+    return this.http.put<any>(url,data ,{ headers: headers })
+  }
   get_post_request() {
     return this.http.get(this.apiUrl)
   }
@@ -37,4 +47,21 @@ export class ConnectivityService {
     )
   }
 
+  // user 
+
+  get_user(){
+    return this.http.get(this.userURL)
+  }
+
+  post_user(data: object){
+    return this.http.post(this.userURL,data)
+  }
+
+
+  // sending information to mobile 
+
+  send_sms(data: object)
+  {
+    return this.http.post(this.sms,JSON.stringify(data))
+  }
 }

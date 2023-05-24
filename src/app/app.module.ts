@@ -21,6 +21,8 @@ import { AddPrecautionComponent } from './add-precaution/add-precaution.componen
 import * as CanvasJSAngularChart from '../assets/canvasjs-3.7.5/canvasjs.angular.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChatbotComponent } from './chatbot/chatbot.component';
+import { Register2Component } from './register2/register2.component';
+import { BlogComponent } from './blog/blog.component';
 
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
@@ -40,7 +42,9 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     AboutUsComponent,
     AddPrecautionComponent,
     CanvasJSChart,
-    ChatbotComponent
+    ChatbotComponent,
+    Register2Component,
+    BlogComponent
 
   ],
   imports: [

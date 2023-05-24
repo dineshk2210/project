@@ -5,17 +5,32 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './chatbot.component.html',
   styleUrls: ['./chatbot.component.css']
 })
-export class ChatbotComponent implements OnInit {
+export class ChatbotComponent  {
 
   showChat: boolean = false;
-  constructor() { }
+  questions: string[] = [];
+  newQuestionText: string = '';
+  result: string = '';
 
-  ngOnInit(): void {
-  }
-
-  showChatBot() {
+  showChatBot(): void {
     this.showChat = !this.showChat;
-    console.log("click")
   }
 
+  submitQuestion(): void {
+    if (this.newQuestionText) {
+      this.questions.push(this.newQuestionText);
+      this.getResult(this.newQuestionText); // Function to get the result based on the question
+      this.newQuestionText = '';
+    }
+  }
+
+  getResult(question: string): void {
+    // Here, you can implement the logic to get the answer/result based on the question.
+    // For simplicity, let's assume a static answer:
+    if (question === 'Hi there') {
+      this.result = 'Hey , How Can I help you?.';
+    } else {
+      this.result = 'Sorry, I cannot answer that question.';
+    }
+  }
 }

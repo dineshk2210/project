@@ -1,0 +1,42 @@
+<div class=" relative text-center justify-center items-center  h-screen bg-primary-100  ">
+    <img src="assets\Images\register_bg.png" alt="" class="absolute z-0 h-full opacity-10">
+    <img src="assets\Images\register_bg.png" alt="" class="absolute z-0 h-full opacity-10 right-0">
+    <div class="relative z-10 flex text-4xl opacity-40 text-gray-500 animate-pulse bg-primary-50 p-10 text-center justify-center pt-10 rounded-br-full rounded-bl-full cursor-pointer"
+        routerLink="/">
+        <img src="./../../assets/Images/left-arrow.png" alt="left-arrow" class="w-10 h-10 mr-2" />Back to the Med
+        Ease
+        Website
+    </div>
+
+    <div class="relative z-10 flex justify-evenly p-10 mt-10">
+        <!-- <img src="./../../assets/Images/signup.svg" alt="signUp" class="w-1/4"> -->
+        <div class="bg-primary-80 py-20 rounded-2xl shadow-lg shadow-black lg:w-[900px]">
+            <h1 class="text-4xl tracking-widest font-bold text-secondary-100 ">
+                Enter Phone Number
+            </h1>
+            <h1 class="text-2xl tracking-widest text-white font-bold">  Allow location access</h1>
+            <form #SignUp='ngForm' (ngSubmit)="register(SignUp.value)"
+                class="flex flex-col   mx-auto mb-5  my-10 px-20  space-y-10 ">
+               
+                <input class="p-5 border-2  bg-primary-50 rounded-full border-primary-80  text-secondary-100"
+                    type="tel" placeholder="Enter your Phone Number" name="mobile" ngModel />
+                
+              
+                <button type='submit' (click)="register(SignUp.value)" class="border-4 p-3 shadow-inner shadow-black  w-40 m-auto bg-secondary-100 rounded-full text-mono text-primary-50 text-xl
+                hover:bg-secondary-50 hover:border-primary-50 uppercase tracking-widest">Save</button>
+
+
+
+              
+            </form>
+
+
+            
+         
+
+        </div>
+
+    </div>
+
+
+</div>

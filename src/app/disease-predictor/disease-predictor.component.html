@@ -1,6 +1,6 @@
 <div class="relative dp h-full font-mono bg-primary-100 text-center justify-center pb-40">
-    <img src="assets\Images\predict_doctor.png" alt="" class="absolute opacity-10 h-full right-0">
-    <div class="relative flex justify-center items-center p-10 ">
+    <img src="assets\Images\predict_doctor.png" alt="" class="absolute z-0 opacity-10 h-full right-0">
+    <div class="relative flex justify-center h-screen items-center p-10 z-10 ">
 
         <div class="justify-center items-center">
 
@@ -9,73 +9,69 @@
                 Predict
                 Your Disease</h1>
 
-            <form #predict="ngForm" (ngSubmit)="getData(predict.value)">
-                <div
-                    class=" flex flex-col  bg-primary-80 shadow-lg mx-auto justify-center shadow-black p-10 rounded-2xl items-center text-center my-20  space-y-10">
-
-                    <div class="flex space-x-5">
-                        <label class="text-3xl text-secondary-50 font-bold">Symptom 1</label>
-                        <select
-                            class="border-2 outline-none bg-transparent rounded-full text-secondary-100 text-xl  border-gray-400 px-10 mb-5 py-3  focus:border-secondary-100 focus:border-4"
-                            name="S1" ngModel>
-                            <option value="" disabled>Choose Symptom</option>
-                            <option *ngFor="let x of names">{{x}}</option>
-                        </select>
-                    </div>
+            <form #predict='ngForm' (ngSubmit)="getData(predict.value)"
+                class=" flex flex-col  bg-primary-80 shadow-lg mx-auto justify-center shadow-black p-10 rounded-2xl items-center text-center my-20  space-y-5">
 
 
-                    <div class="flex space-x-5">
-                        <label class="text-3xl text-secondary-50 font-bold ">Symptom 2</label>
-                        <select
-                            class="border-2 outline-none bg-transparent rounded-full text-secondary-100 text-xl  border-gray-400 px-10 mb-5 py-3  focus:border-secondary-100 focus:border-4"
-                            name="S2" ngModel>
-                            <option value="" disabled>Choose Symptom</option>
-                            <option *ngFor="let x of names">{{x}}</option>
-                        </select>
-                    </div>
-
-                    <div class="flex space-x-5">
-                        <label class="text-3xl text-secondary-50 font-bold">Symptom 3</label>
-                        <select
-                            class="border-2 outline-none bg-transparent rounded-full  text-secondary-100  text-xl border-gray-400 px-10 mb-5 py-3  focus:border-secondary-100 focus:border-4"
-                            name="S3" ngModel>
-                            <option value="" disabled>Choose Symptom</option>
-                            <option *ngFor="let x of names">{{x}}</option>
-                        </select>
-                    </div>
-
-
-                    <div class="flex space-x-5">
-                        <label class="text-3xl text-secondary-50 font-bold">Symptom 4</label>
-                        <select
-                            class="border-2  outline-none bg-transparent rounded-full  text-secondary-100 text-xl border-gray-400 px-10 mb-5 py-3 focus:border-secondary-100 focus:border-4"
-                            name="S4" ngModel>
-                            <option value="" disabled>Choose Symptom</option>
-                            <option *ngFor="let x of names">{{x}}</option>
-                        </select>
-                    </div>
-
-
-                    <div class="flex space-x-5">
-                        <label class="text-3xl text-secondary-50 font-bold">Symptom 5</label>
-                        <select
-                            class="border-2 outline-none bg-transparent rounded-full  text-secondary-100 text-xl border-gray-400 px-10 mb-5 py-3 focus:border-secondary-100 focus:border-4"
-                            name="S5" ngModel>
-                            <option value="" disabled>Choose Symptom</option>
-                            <option *ngFor="let x of names">{{x}}</option>
-                        </select>
-                    </div>
-
-
-
-                    <button type="submit" class="border-4 p-3 w-40   bg-secondary-100 rounded-full font-bold tracking-[5px] text-primary-50 text-xl
-                    hover:bg-secondary-50 hover:border-primary-50">
-                        SUBMIT
-                    </button>
-
+                <div class="flex space-x-5">
+                    <label class="text-3xl text-secondary-50 font-bold">Symptom 1</label>
+                    <select
+                        class="border-2 outline-none bg-transparent rounded-full text-secondary-100 text-xl  border-gray-400 px-10 mb-5 py-3  focus:border-secondary-100 focus:border-4"
+                        name="S1" id="#S1" ngModel>
+                        <option value="" disabled>Choose Symptom</option>
+                        <option *ngFor="let x of names" >{{x}}</option>
+                    </select>
                 </div>
 
 
+                <div class="flex space-x-5">
+                    <label class="text-3xl text-secondary-50 font-bold ">Symptom 2</label>
+                    <select
+                        class="border-2 outline-none bg-transparent rounded-full text-secondary-100 text-xl  border-gray-400 px-10 mb-5 py-3  focus:border-secondary-100 focus:border-4"
+                        name="S2" id="#S2" ngModel>
+                        <option value="" disabled>Choose Symptom</option>
+                        <option *ngFor="let x of names" >{{x}}</option>
+                    </select>
+                </div>
+
+                <div class="flex space-x-5">
+                    <label class="text-3xl text-secondary-50 font-bold">Symptom 3</label>
+                    <select
+                        class="border-2 outline-none bg-transparent rounded-full  text-secondary-100  text-xl border-gray-400 px-10 mb-5 py-3  focus:border-secondary-100 focus:border-4"
+                        name="S3" id="#S3" ngModel>
+                        <option value="" disabled>Choose Symptom</option>
+                        <option *ngFor="let x of names" >{{x}}</option>
+                    </select>
+                </div>
+
+
+                <div class="flex space-x-5">
+                    <label class="text-3xl text-secondary-50 font-bold">Symptom 4</label>
+                    <select
+                        class="border-2  outline-none bg-transparent rounded-full  text-secondary-100 text-xl border-gray-400 px-10 mb-5 py-3 focus:border-secondary-100 focus:border-4"
+                        name="S4" id="#S4" ngModel>
+                        <option value="" disabled>Choose Symptom</option>
+                        <option *ngFor="let x of names" >{{x}}</option>
+                    </select>
+                </div>
+
+
+                <div class="flex space-x-5">
+                    <label class="text-3xl text-secondary-50 font-bold">Symptom 5</label>
+                    <select
+                        class="border-2 outline-none bg-transparent rounded-full  text-secondary-100 text-xl border-gray-400 px-10 mb-5 py-3 focus:border-secondary-100 focus:border-4"
+                        name="S5" id="#S5" ngModel>
+                        <option value="" disabled>Choose Symptom</option>
+                        <option *ngFor="let x of names" >{{x}}</option>
+                    </select>
+                </div>
+
+
+
+                <button (click)="getData(predict.value)" class="border-4 p-3 w-40   bg-secondary-100 rounded-full font-bold tracking-[5px] text-primary-50 text-xl
+                    hover:bg-secondary-50 hover:border-primary-50">
+                    SUBMIT
+                </button>
 
 
             </form>
@@ -84,53 +80,114 @@
     </div>
 
 
-    <hr *ngIf="showResult" class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700 mx-40">
-    <div *ngIf="showResult">
-        <h1 class="text-secondary-100 text-4xl justify-center text-center mx-auto">Result</h1>
+    <hr *ngIf="showResult" class=" relative z-10 my-8 bg-gray-200 border-2 dark:bg-gray-700 mx-40">
+    <div *ngIf="showResult " class="z-10 relative ">
+        <h1 class="text-secondary-100 text-5xl justify-center text-center mx-auto font-bold p-10  ">Result</h1>
 
-        <div class="flex-col justify-evenly mt-20 space-y-10">
-
-
-            <div class="">
-                <table class="table-auto mt-20 mx-auto px-10 text-2xl ">
-                    <thead class=" text-primary-50 bg-gray-300 border-2 border-primary-50 ">
-                        <tr>
-                            <th>Model used</th>
-                            <th>Disease</th>
+        <div class="flex-col justify-center  items-center mt-20 space-y-20">
 
 
-                        </tr>
-                    </thead>
-                    <tbody class="text-primary-50 border-2 border-primary-50 mt-10 mx-auto px-10  bg-secondary-100 ">
-                        <tr *ngFor="let item of list" class="">
-                            <td *ngIf='item.id==list.length'>{{item.result1.model1}}</td>
-                            <td *ngIf='item.id==list.length'>{{item.result1.answer1}}</td>
 
-                        </tr>
-                        <tr *ngFor="let item of list">
-                            <td *ngIf='item.id==list.length'>{{item.result2.model2}}</td>
-                            <td *ngIf='item.id==list.length'>{{item.result2.answer2}}</td>
+            <table class="shadow-2xl shadow-black  rounded-2xl mt-20 mx-auto p-20 text-4xl ">
 
-                        </tr>
-                        <tr *ngFor="let item of list">
-                            <td *ngIf='item.id==list.length'>{{item.result3.model3}}</td>
-                            <td *ngIf='item.id==list.length'>{{item.result3.answer3}}</td>
+                <tbody class="text-primary-50  mt-10 mx-auto p-10  bg-secondary-100 ">
+                    <tr *ngFor="let item of list" class="">
+                        <td *ngIf='item.id==list.length' class="tracking-widest bg-primary-80 text-white">Predicted
+                            Disease</td>
+                        <td *ngIf='item.id==list.length' class="tracking-widest">{{item.result1.answer1}}</td>
+                    </tr>
 
-                        </tr>
 
-                    </tbody>
-                </table>
-            </div>
-            <div class="">
-                <canvasjs-chart [options]="chartOptions" class="  w-1/6"></canvasjs-chart>
-            </div>
+                </tbody>
+            </table>
+
+
             <!-- 
             <img src="./../../assets/Images/precaution.svg" alt="precaution"
                 class="w-1/6 pt-10 hover:blur-0 hover:w-1/5 cursor-pointer" router-link=""> -->
-            <button type="button" class="border-4 p-3 w-60 m-auto bg-secondary-100 rounded-lg text-mono text-primary-50 text-xl
-                hover:bg-secondary-50 hover:border-primary-50" routerLink="/precaution">Get Precautions</button>
+
+
+
+            <div *ngFor="let x of result">
+                <div *ngIf="x.disease===disease "
+                    class=" text-4xl text-secondary-100 justify-center items-center mx-auto text-center  bg-primary-80 p-20 w-[60%] rounded-2xl shadow-lg shadow-black">
+                    <h2 class="pb-10">Precautions of <span class="text-warning-50">{{x.disease}}</span></h2>
+
+                    <li class="text-left p-5" *ngFor="let p of x.precaution">
+                        <h1 *ngIf="x.precaution">{{p}}</h1>
+                    </li>
+                </div>
+            </div>
+
+
+
         </div>
     </div>
+    <div *ngIf="isNearby " class="flex flex-col space-y-10 justify-center items-center text-center p-10 ">
+        <h1 class="text-4xl text-secondary-100 font-bold tracking-[10px]">Nearby Location</h1>
+        
+        <div id='map' class=" w-[500px] h-[500px] mx-auto border-8 border-primary-80 overflow-hidden rounded-2xl shadow-2xl shadow-black "></div>
+
+    </div>
+
+    <div *ngIf="isNearby " class="p-20 flex flex-col space-x-10 justify-center items-center ">
+        <h1 class="text-4xl text-secondary-100 font-bold tracking-[10px] ">Nearby HOSPITALS</h1>
+        <div class="justify-center items-center mx-auto">
+            <table class="shadow-2xl shadow-black  rounded-2xl mt-20 mx-auto p-20 text-3xl ">
+
+                <tbody class="text-3xl text-primary-50  font-bold mt-10 mx-auto p-10  bg-secondary-100 ">
+                    <tr class="">
+                        <td  class="tracking-widest bg-secondary-50 text-primary-50 w-[40%]">Hospitals Name</td>
+                        <td  class="tracking-widest bg-white text-secondary-100">Hospitals Address</td>
+                    </tr>
+
+
+                </tbody>
+
+                
+                <tbody class="text-2xl text-primary-50  mt-10 mx-auto p-10  bg-secondary-100 ">
+                    <tr *ngFor="let item of Hospitals" class="">
+                        <td  class="tracking-widest bg-primary-80 text-white">{{item.name}}</td>
+                        <td  class="tracking-widest">{{item.address}}</td>
+                    </tr>
+
+
+                </tbody>
+                
+            </table>
+        </div>
+    </div>
+
+    <div *ngIf="isNearby " class="p-20 flex flex-col space-x-10 justify-center items-center ">
+        <h1 class="text-4xl text-secondary-100 font-bold tracking-[10px] ">Nearby DOCTORS</h1>
+        <div class="justify-center items-center mx-auto">
+            <table class="shadow-2xl shadow-black  rounded-2xl mt-20 mx-auto p-20 text-3xl ">
+
+                <tbody class="text-3xl text-primary-50  font-bold mt-10 mx-auto p-10  bg-secondary-100 ">
+                    <tr class="">
+                        <td  class="tracking-widest bg-secondary-50 text-primary-50 w-[40%]">Doctors Name</td>
+                        <td  class="tracking-widest bg-white text-secondary-100">Doctors Address</td>
+                    </tr>
+
+
+                </tbody>
+
+                
+                <tbody class="text-2xl text-primary-50  mt-10 mx-auto p-10  bg-secondary-100 ">
+                    <tr *ngFor="let item of Doctors" class="">
+                        <td  class="tracking-widest bg-primary-80 text-white">{{item.name}}</td>
+                        <td  class="tracking-widest">{{item.address}}</td>
+                    </tr>
+
+
+                </tbody>
+                
+            </table>
+        </div>
+    </div>
+    <div *ngIf="isNearby " class="text-green-600 font-bold text-4xl tracking-[8px]  w-[70%]  justify-center items-center mx-auto text-center p-10">These above information are also sent to your registered Mobile number!</div>
+
+
 
 
 

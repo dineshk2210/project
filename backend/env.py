@@ -1,0 +1,2 @@
+sid = "ACcae1444005ed3109dd587b32e2602fe8"
+auth_token = "c541e7c8808188f9e0da73b3c588ea86"
